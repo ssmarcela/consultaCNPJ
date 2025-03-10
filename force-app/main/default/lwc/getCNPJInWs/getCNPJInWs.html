@@ -1,0 +1,9 @@
+<template>
+    <lightning-card title="Consulta CNPJ">
+        <div class="slds-p-left_small slds-text-heading_small">Consulte o CNPJ do cliente clicando no botão abaixo.</div>
+        <lightning-button class= "slds-p-left_small slds-p-top_mediu" label="Buscar Dados" onclick={handleConsulta} disabled={loading}></lightning-button>
+        <template if:true={loading}>
+            <lightning-spinner alternative-text="Consultando..."></lightning-spinner>
+        </template>
+    </lightning-card>
+</template>
