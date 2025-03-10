@@ -1,18 +1,45 @@
-# Salesforce DX Project: Next Steps
+# 🔍 Integração com CNPJ.ws no Salesforce
 
-Now that you’ve created a Salesforce DX project, what’s next? Here are some documentation resources to get you started.
+Este projeto é um **mini projeto** que integra o **Salesforce** com a API **CNPJ.ws** para consultar dados de empresas com base no CNPJ informado.
 
-## How Do You Plan to Deploy Your Changes?
+## 📌 Funcionalidades
 
-Do you want to deploy a set of changes, or create a self-contained application? Choose a [development model](https://developer.salesforce.com/tools/vscode/en/user-guide/development-models).
+✅ Consulta de CNPJ diretamente no Salesforce  
+✅ Retorno automático dos dados da empresa (razão social, nome fantasia, endereço, etc.)  
+✅ Atualização automática dos campos na **Conta (Account)** do Salesforce  
+✅ Implementação com **Apex** e **Lightning Web Components (LWC)**  
 
-## Configure Your Salesforce DX Project
+---
 
-The `sfdx-project.json` file contains useful configuration information for your project. See [Salesforce DX Project Configuration](https://developer.salesforce.com/docs/atlas.en-us.sfdx_dev.meta/sfdx_dev/sfdx_dev_ws_config.htm) in the _Salesforce DX Developer Guide_ for details about this file.
+## 🚀 Como Funciona?
 
-## Read All About It
+1. O usuário acessa um **registro de Conta** no Salesforce.
+2. Clica no botão **"Buscar Dados"**.
+3. O sistema faz uma requisição para a **API do CNPJ.ws**.
+4. Os dados retornados são exibidos e armazenados na Conta automaticamente.
 
-- [Salesforce Extensions Documentation](https://developer.salesforce.com/tools/vscode/)
-- [Salesforce CLI Setup Guide](https://developer.salesforce.com/docs/atlas.en-us.sfdx_setup.meta/sfdx_setup/sfdx_setup_intro.htm)
-- [Salesforce DX Developer Guide](https://developer.salesforce.com/docs/atlas.en-us.sfdx_dev.meta/sfdx_dev/sfdx_dev_intro.htm)
-- [Salesforce CLI Command Reference](https://developer.salesforce.com/docs/atlas.en-us.sfdx_cli_reference.meta/sfdx_cli_reference/cli_reference.htm)
+---
+
+## ⚙️ Tecnologias Utilizadas
+
+- **Salesforce (Lightning Experience)**
+- **Apex (Back-end)**
+- **Lightning Web Components (LWC)**
+- **Git & GitHub**
+- **API pública do CNPJ.ws**
+
+---
+
+## 🔧 Configuração e Instalação
+
+### **1️⃣ Habilitar chamadas externas no Salesforce**
+Antes de executar a integração, é necessário permitir que o Salesforce acesse a API do CNPJ.ws.
+
+#### 🔹 Configurar Site Remoto:
+1. Acesse **Configurações do Salesforce**.
+2. No campo de pesquisa, busque por **Configurações de Sites Remotos**.
+3. Clique em **Novo Site Remoto** e preencha:
+   - **Nome do Site:** `CNPJ_WS`
+   - **URL do Site:** `https://publica.cnpj.ws`
+   - **Ativo:** ✅ Marcado
+4. Clique em **Salvar**.
